@@ -1,0 +1,49 @@
+query Login ($username: String!, $password: String!){
+	login(username: $username, password:$password) {
+    username
+    firstname
+    lastname
+    lastname2
+    email
+    phonenumber1
+    phonenumber2
+    birthday
+    profilePicture
+    address {
+      provincia
+      canton
+      distrito
+    }
+    professions {
+      profession {
+        professionid
+        professionname
+      }
+      experienceyears
+      details
+      costperhour
+      referencePictures {
+        imageID
+        imageURL
+      }
+    }
+    availableSchedule {
+      day
+      startTime
+      endTime
+    }
+    workZones {
+      provincia
+      canton
+    }
+    references {
+      referencenumber
+      lastjob
+      firstname
+      lastname
+      lastname2
+      phonenumber
+    }
+  }
+}
+

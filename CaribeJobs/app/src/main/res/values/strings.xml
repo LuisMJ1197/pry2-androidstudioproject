@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">CaribeJobs</string>
     <string name="applicationLogo">applicationLogo</string>
+    <string name="action_search">Buscar</string>
+    <string name="action_settings">Opciones</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="guestButton">Invitado</string>
+    <string name="no_est_s_registrado">¿No estás registrado?</string>
+    <string name="reg_strate"><u>Regístrate</u></string>
+    <string name="password_hint">Contraseña</string>
+    <string name="username_hint">Nombre de usuario</string>
+    <string name="caribejobs_api_url">http://192.168.0.4:4000/caribejobs</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_text_1">Mi Perfil</string>
+    <string name="tab_text_2">Ofertas laborales</string>
+    <string name="save">save</string>
+
+    <string name="title_activity_full_image">FullImageActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="connectionString">DefaultEndpointsProtocol=https;AccountName=imagespry2design;AccountKey=8b2a42ec-ffda-4787-b5d1-61e7d18c2081DefaultEndpointsProtocol=https;AccountName=imagespry2design;AccountKey=9vMVH6hOshX2FNfCRfSK/7puiUrGMH/YBHjN1c34j/YypM4PqXH/JAkLa/bk25wibHDnocJfy6PweGpbQIm6Ng==;EndpointSuffix=core.windows.net</string>
 </resources>

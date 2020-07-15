@@ -1,0 +1,6 @@
+mutation UpdateAddress ($address: AddressInput!) {
+    updateAddress(address: $address) {
+        responseMessage
+        errorCode
+    }
+}

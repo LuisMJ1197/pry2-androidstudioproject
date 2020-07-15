@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:gravity="center"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/professionname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comforta"
+            android:text="TextView"
+            android:textColor="@color/lv1Color"
+            android:textSize="@dimen/textLV1" />
+
+        <TextView
+            android:id="@+id/experienceyears"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/costperhour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:inputType="text|textMultiLine"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/photosCount"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textAlignment="textEnd"
+        android:layout_height="wrap_content"
+        android:text="Photos"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_weight="0.1"
+        android:scaleType="fitEnd"
+        android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:tint="@color/arrowTint" />
+
+</LinearLayout>

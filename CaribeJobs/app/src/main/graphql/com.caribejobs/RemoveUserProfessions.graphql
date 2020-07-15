@@ -1,0 +1,6 @@
+mutation RemoveUserProfessions($username: String!, $professionids: String!) {
+  removeUserProfessions(username: $username, professionids: $professionids) {
+    responseMessage
+    errorCode
+  }
+}

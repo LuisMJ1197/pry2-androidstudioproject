@@ -1,0 +1,6 @@
+mutation RemoveReferencePictures($username: String!, $imageIDs: String!) {
+  removeReferencePictures(username: $username, imageIDs: $imageIDs) {
+    responseMessage
+    errorCode
+  }
+}

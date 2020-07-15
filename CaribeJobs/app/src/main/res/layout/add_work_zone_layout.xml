@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="1000dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar zona de trabajo"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/comforta"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/provinciala"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Provincia"
+            android:fontFamily="@font/comforta"/>
+
+        <Spinner
+            android:id="@+id/provinciaSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="@font/comforta"
+            />
+        <TextView
+            android:id="@+id/cantonLa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cantón"
+            android:fontFamily="@font/comforta"/>
+
+        <Spinner
+            android:id="@+id/cantonSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="@font/comforta"
+            />
+
+        <Button
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:id="@+id/addWZBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar"
+            style="?android:attr/borderlessButtonStyle"
+            android:textSize="@dimen/textLV1"
+            android:fontFamily="@font/comforta"
+            android:background="@android:color/holo_green_light"
+            android:textColor="@android:color/background_light"
+            />
+
+    </LinearLayout>
+</LinearLayout>

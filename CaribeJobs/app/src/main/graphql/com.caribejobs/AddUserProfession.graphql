@@ -1,0 +1,6 @@
+mutation AddUserProfession ($professionInput: UserProfessionInput!) {
+  addUserProfession(professionInput: $professionInput) {
+    responseMessage
+    errorCode
+  }
+}

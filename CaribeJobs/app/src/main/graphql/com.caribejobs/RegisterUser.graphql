@@ -1,0 +1,6 @@
+mutation RegisterUser($user: UserLoginInput) {
+  registerUser(user: $user) {
+    responseMessage
+    errorCode
+  }
+}

@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ScheduleActivity">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.caribejobs.viewmodel.ScheduleActivityViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="0dp"
+            android:theme="@style/HomeTheme"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/allDaysSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Todos los días"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.allDaysEnabled}"
+                    android:fontFamily="@font/comforta"
+                    android:buttonTint="@android:color/holo_green_light"/>
+
+                <LinearLayout
+                    android:id="@+id/allDaysLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertAllDaysStartTime()}" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora inicio"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/allDaysStartTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.startTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertAllDaysEndTime()}" >
+
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora fin"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/allDaysEndTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.endTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lunes"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.mondayEnabled}"
+                    android:fontFamily="@font/comforta"
+                    android:buttonTint="@android:color/holo_green_light"/>
+
+                <LinearLayout
+                    android:id="@+id/mondayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertMondayStartTime()}" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora inicio"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/mondayStartTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.monday.startTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertMondayEndTime()}" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora fin"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/mondayEndTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.monday.endTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Martes"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.tuesdayEnabled}"
+                    android:fontFamily="@font/comforta"
+                    android:buttonTint="@android:color/holo_green_light"/>
+
+                <LinearLayout
+                    android:id="@+id/tuesdayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertTuesdayStartTime()}" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora inicio"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/tuesdayStartTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.tuesday.startTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertTuesdayEndTime()}" >
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora fin"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/tuesdayEndTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.tuesday.endTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Miércoles"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.wednesdayEnabled}"
+                    android:fontFamily="@font/comforta"
+                    android:buttonTint="@android:color/holo_green_light"/>
+
+                <LinearLayout
+                    android:id="@+id/wednesdayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertWednesdayStartTime()}" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora inicio"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/wednesdayStartTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.wednesday.startTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertWednesdayEndTime()}" >
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora fin"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/wednesdayEndTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.wednesday.endTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jueves"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.thursdayEnabled}"
+                    android:fontFamily="@font/comforta"
+                    android:buttonTint="@android:color/holo_green_light"/>
+
+                <LinearLayout
+                    android:id="@+id/thursdayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertThursdayStartTime()}" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora inicio"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/thursdayStartTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.thursday.startTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertThursdayEndTime()}" >
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora fin"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/thursdayEndTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.thursday.endTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Viernes"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.fridayEnabled}"
+                    android:fontFamily="@font/comforta"
+                    android:buttonTint="@android:color/holo_green_light"/>
+
+                <LinearLayout
+                    android:id="@+id/fridayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertFridayStartTime()}" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora inicio"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/fridayStartTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.friday.startTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertFridayEndTime()}" >
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora fin"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/fridayEndTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.friday.endTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sábado"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.saturdayEnabled}"
+                    android:fontFamily="@font/comforta"
+                    android:buttonTint="@android:color/holo_green_light"/>
+
+                <LinearLayout
+                    android:id="@+id/saturdayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertSaturdayStartTime()}" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora inicio"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/saturdayStartTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.saturday.startTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertSaturdayEndTime()}" >
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora fin"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/saturdayEndTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.saturday.endTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Domingo"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="@={viewModel.sundayEnabled}"
+                    android:fontFamily="@font/comforta"
+                    android:buttonTint="@android:color/holo_green_light"/>
+
+                <LinearLayout
+                    android:id="@+id/sundayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertSundayStartTime()}" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora inicio"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/sundayStartTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.sunday.startTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingStart="@dimen/activity_vertical_margin"
+                        android:paddingEnd="@dimen/activity_vertical_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{()-> viewModel.onInsertSundayEndTime()}" >
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/comforta"
+                                android:text="Hora fin"
+                                android:textAlignment="textStart"
+                                android:textColor="#2B2B2B"
+                                android:textSize="@dimen/textSize" />
+
+                            <TextView
+                                android:id="@+id/sundayEndTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/comforta"
+                                android:text="@={viewModel.scheduleMutableLiveData.sunday.endTime}"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/textSize" />
+
+                            <ImageView
+                                android:scaleType="fitEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.1"
+                                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                android:tint="@color/arrowTint"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/Divider"
+                            android:foreground="@color/dividerColor"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</layout>

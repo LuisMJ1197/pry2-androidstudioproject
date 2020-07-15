@@ -1,0 +1,7 @@
+mutation AddUserReference($reference: ReferenceInput!) {
+  addUserReference(reference: $reference) {
+    responseMessage
+    resultData
+    errorCode
+  }
+}

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.Register2Activity" >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.caribejobs.viewmodel.Register2ViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:gravity="center_horizontal" >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_dark"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/inFirstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textSize="25sp"
+                    android:text="@={viewModel.userRegister.firstname}"
+                    android:fontFamily="@font/comforta_regular"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/firstnameError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comforta"
+                    android:text="@{viewModel.errorFirstname}"
+                    android:visibility="@{viewModel.errorFirstnameVisibility}"
+                    android:textColor="#FE615A"
+                    android:textSize="10sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+                <EditText
+                    android:id="@+id/inLastname1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Primer apellido"
+                    android:inputType="textPersonName"
+                    android:text="@={viewModel.userRegister.lastname}"
+                    android:padding="8dp"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/comforta_regular"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/lastnameError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comforta"
+                    android:text="@{viewModel.errorLastname1}"
+                    android:visibility="@{viewModel.errorLastname1Visibility}"
+                    android:textColor="#FE615A"
+                    android:textSize="10sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+                <EditText
+                    android:id="@+id/inLastname2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Segundo apellido"
+                    android:inputType="textPersonName"
+                    android:text="@={viewModel.userRegister.lastname2}"
+                    android:padding="8dp"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/comforta_regular"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/lastname2Error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comforta"
+                    android:text="@{viewModel.errorLastname2}"
+                    android:visibility="@{viewModel.errorLastname2Visibility}"
+                    android:textColor="#FE615A"
+                    android:textSize="10sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+                <EditText
+                    android:id="@+id/inPhonenumber1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Número de teléfono 1"
+                    android:inputType="phone"
+                    android:text="@={viewModel.userRegister.phonenumber1}"
+                    android:padding="8dp"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/comforta_regular"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/phonenumber1Error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comforta"
+                    android:text="@{viewModel.errorPhonenumber1}"
+                    android:visibility="@{viewModel.errorPhonenumber1Visibility}"
+                    android:textColor="#FE615A"
+                    android:textSize="10sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+                <EditText
+                    android:id="@+id/inPhonenumber2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Número de teléfono 2"
+                    android:inputType="phone"
+                    android:text="@={viewModel.userRegister.phonenumber2}"
+                    android:padding="8dp"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/comforta_regular"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/phonenumber2Error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comforta"
+                    android:text="@{viewModel.errorPhonenumber2}"
+                    android:visibility="@{viewModel.errorPhonenumber2Visibility}"
+                    android:textColor="#FE615A"
+                    android:textSize="10sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+                <EditText
+                    android:id="@+id/inBirthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de nacimiento"
+                    android:inputType="date"
+                    android:text="@={viewModel.userRegister.birthday}"
+                    android:padding="8dp"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:onClick="openDatePicker"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/confirmPasswordError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comforta"
+                    android:text="@{viewModel.errorBirthday}"
+                    android:visibility="@{viewModel.errorBirthdayVisibility}"
+                    android:textColor="#FE615A"
+                    android:textSize="10sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="top"
+                android:gravity="top">
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/comforta_regular"
+                    android:text="Terminar registro"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:onClick="@{()-> viewModel.onEnRegisterClick()}"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom|center"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="20dp"
+                    android:onClick="goBack">
+                    <TextView
+                        android:id="@+id/register_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comforta"
+                        android:text="Cancelar"
+                        android:textColor="#FE615A"
+                        android:textSize="20sp"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:progressTint="@android:color/holo_green_light"
+                    android:progress="100"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

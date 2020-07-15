@@ -1,0 +1,6 @@
+mutation RemoveUserReferences($username: String!, $referenceids: String!) {
+  removeUserReferences(username: $username, referenceids: $referenceids) {
+    responseMessage
+    errorCode
+  }
+}

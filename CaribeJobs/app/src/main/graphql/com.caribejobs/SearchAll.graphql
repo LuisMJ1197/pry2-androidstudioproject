@@ -1,0 +1,44 @@
+query SearchAll {
+  searchAll {
+    firstname
+    lastname
+    lastname2
+    email
+    phonenumber1
+    phonenumber2
+    birthday
+    profilePicture
+    address {
+      provincia
+      canton
+      distrito
+    }
+    professions {
+      profession {
+        professionid
+        professionname
+      }
+      experienceyears
+      details
+      costperhour
+      referencePictures {
+        imageID
+        imageURL
+      }
+    }
+    availableSchedule {
+      day
+    }
+    workZones {
+      provincia
+      canton
+    }
+    references {
+      referencenumber
+      firstname
+      lastname
+      lastname2
+      phonenumber
+    }
+  }
+}

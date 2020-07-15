@@ -1,0 +1,6 @@
+query GetProfessions {
+  getProfessions {
+    professionid
+    professionname
+  }
+}

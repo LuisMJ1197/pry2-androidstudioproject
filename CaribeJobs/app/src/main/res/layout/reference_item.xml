@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:gravity="center"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_vertical_margin">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/complete_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comforta"
+            android:text="TextView"
+            android:textColor="@color/lv1Color"
+            android:textSize="@dimen/textLV1" />
+
+        <TextView
+            android:id="@+id/jobname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/phonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="61638663"
+        android:paddingRight="10dp"
+        android:gravity="center|end"
+        android:fontFamily="@font/comforta"
+        android:textSize="@dimen/textLV1"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_weight="0.1"
+        android:scaleType="fitEnd"
+        android:src="@drawable/ic_local_phone_black_24dp" />
+
+</LinearLayout>

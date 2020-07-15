@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:shape="rectangle" android:padding="10dp"
+    tools:ignore="MissingDefaultResource">
+    <!-- you can use any color you want I used here gray color-->
+    <corners android:radius="0dp"/>
+    <stroke
+        android:width="2dp"
+        android:color="#FFF" />
+</shape>

@@ -1,0 +1,7 @@
+mutation AddReferencePicture($referencePicture: ReferencePictureInput!) {
+  addReferencePicture(referencePicture: $referencePicture) {
+    responseMessage
+    resultData
+    errorCode
+  }
+}

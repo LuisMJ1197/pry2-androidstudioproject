@@ -1,0 +1,6 @@
+mutation ClearUserAvailableSchedule($username: String!) {
+  clearUserAvailableScheudle(username: $username) {
+    responseMessage
+    errorCode
+  }
+}

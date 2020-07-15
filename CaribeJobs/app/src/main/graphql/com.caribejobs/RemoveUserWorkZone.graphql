@@ -1,0 +1,6 @@
+mutation RemoveUserWorkZone ($workZone: WorkZoneInput!) {
+  removeUserWorkZone(workZone: $workZone) {
+    responseMessage
+    errorCode
+  }
+}

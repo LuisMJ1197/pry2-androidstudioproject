@@ -1,0 +1,6 @@
+mutation UpdateUser($username: String!, $email:String!, $phonenumber1: String!, $phonenumber2: String!) {
+    updateUser(username: $username, email: $email, phonenumber1: $phonenumber1, phonenumber2: $phonenumber2) {
+        responseMessage
+        errorCode
+    }
+}

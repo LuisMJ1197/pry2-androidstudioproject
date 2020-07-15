@@ -1,0 +1,5 @@
+mutation SetProfilePicture($username: String!, $imageURL: String!) {
+  setProfilePicture(username: $username, imageURL: $imageURL) {
+    responseMessage
+  }
+}

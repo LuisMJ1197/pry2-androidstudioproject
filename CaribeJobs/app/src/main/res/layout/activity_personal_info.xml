@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.PersonalInfoActivity">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.caribejobs.viewmodel.PersonalInfoViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:elevation="0dp"
+                android:theme="@style/HomeTheme"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/activity_vertical_margin"
+                    android:paddingEnd="@dimen/activity_vertical_margin"
+                    android:id="@+id/usernameL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/comforta"
+                            android:text="Nombre de usuario"
+                            android:textAlignment="textStart"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <TextView
+                            android:id="@+id/usernameTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/comforta"
+                            android:text="@={viewModel.user.username}"
+                            android:textAlignment="textEnd"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Divider"
+                        android:foreground="@color/dividerColor"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/activity_vertical_margin"
+                    android:paddingEnd="@dimen/activity_vertical_margin"
+                    android:id="@+id/firstnameL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/comforta"
+                            android:text="Nombre"
+                            android:textAlignment="textStart"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <TextView
+                            android:id="@+id/firstnameTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/comforta"
+                            android:text="@={viewModel.user.firstname}"
+                            android:textAlignment="textEnd"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Divider"
+                        android:foreground="@color/dividerColor"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/activity_vertical_margin"
+                    android:paddingEnd="@dimen/activity_vertical_margin"
+                    android:id="@+id/lastnameL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/comforta"
+                            android:text="Primer apellido"
+                            android:textAlignment="textStart"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <TextView
+                            android:id="@+id/lastnameTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/comforta"
+                            android:text="@={viewModel.user.lastname}"
+                            android:textAlignment="textEnd"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Divider"
+                        android:foreground="@color/dividerColor"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/activity_vertical_margin"
+                    android:paddingEnd="@dimen/activity_vertical_margin"
+                    android:id="@+id/lastname2L"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/comforta"
+                            android:text="Segundo apellido"
+                            android:textAlignment="textStart"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <TextView
+                            android:id="@+id/lastname2TV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/comforta"
+                            android:text="@={viewModel.user.lastname2}"
+                            android:textAlignment="textEnd"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Divider"
+                        android:foreground="@color/dividerColor"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/activity_vertical_margin"
+                    android:paddingEnd="@dimen/activity_vertical_margin"
+                    android:id="@+id/birthdayL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/comforta"
+                            android:text="Fecha de nacimiento"
+                            android:textAlignment="textStart"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <TextView
+                            android:id="@+id/birthdayTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/comforta"
+                            android:text="@={viewModel.user.birthday}"
+                            android:textAlignment="textEnd"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Divider"
+                        android:foreground="@color/dividerColor"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/activity_vertical_margin"
+                    android:paddingEnd="@dimen/activity_vertical_margin"
+                    android:id="@+id/emailL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:onClick="@{()-> viewModel.onEmailClick()}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/comforta"
+                            android:text="Email"
+                            android:textAlignment="textStart"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <TextView
+                            android:id="@+id/emailTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/comforta"
+                            android:text="@={viewModel.user.email}"
+                            android:textAlignment="textEnd"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <ImageView
+                            android:scaleType="fitEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_weight="0.1"
+                            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                            android:tint="@color/arrowTint"/>
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Divider"
+                        android:foreground="@color/dividerColor"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/activity_vertical_margin"
+                    android:paddingEnd="@dimen/activity_vertical_margin"
+                    android:id="@+id/phonenumber1L"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:onClick="@{()-> viewModel.onPhoneNumber1Click()}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/comforta"
+                            android:text="Teléfono 1"
+                            android:textAlignment="textStart"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <TextView
+                            android:id="@+id/phonenumber1TV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/comforta"
+                            android:text="@={viewModel.user.phonenumber1}"
+                            android:textAlignment="textEnd"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <ImageView
+                            android:scaleType="fitEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_weight="0.1"
+                            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                            android:tint="@color/arrowTint"/>
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Divider"
+                        android:foreground="@color/dividerColor"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/activity_vertical_margin"
+                    android:paddingEnd="@dimen/activity_vertical_margin"
+                    android:id="@+id/phonenumber2L"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:onClick="@{()-> viewModel.onPhoneNumber2Click()}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/comforta"
+                            android:text="Teléfono 2"
+                            android:textAlignment="textStart"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <TextView
+                            android:id="@+id/phonenumber2TV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily="@font/comforta"
+                            android:text="@={viewModel.user.phonenumber2}"
+                            android:textAlignment="textEnd"
+                            android:textColor="#2B2B2B"
+                            android:textSize="@dimen/textSize" />
+
+                        <ImageView
+                            android:scaleType="fitEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_weight="0.1"
+                            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                            android:tint="@color/arrowTint"/>
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Divider"
+                        android:foreground="@color/dividerColor"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

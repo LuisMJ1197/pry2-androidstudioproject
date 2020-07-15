@@ -4,4 +4,11 @@
     <color name="colorPrimaryDark">#0F222D</color>
     <color name="colorAccent">#0F222D</color>
     <color name="navColor">#0F222D</color>
+    <color name="dividerColor">#E0E0E2</color>
+    <color name="iconTint">#FE615A</color>
+    <color name="arrowTint">#B6BBBF</color>
+    <color name="lv1Color">#0F222D</color>
+    <color name="lv2Color">#4D6466</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

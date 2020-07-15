@@ -1,0 +1,6 @@
+mutation AddUserWorkZone ($workZone: WorkZoneInput!) {
+  addUserWorkZone(workZone: $workZone) {
+    responseMessage
+    errorCode
+  }
+}

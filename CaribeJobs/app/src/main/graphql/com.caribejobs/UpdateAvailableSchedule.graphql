@@ -1,0 +1,6 @@
+mutation UpdateSchedule ($username: String!, $schedule: [AvailableScheduleInput]!) {
+    updateUserAvailableSchedule(username: $username, schedule: $schedule) {
+        responseMessage
+        errorCode
+    }
+}
